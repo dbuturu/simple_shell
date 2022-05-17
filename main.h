@@ -14,7 +14,7 @@
 
 char* get_line();
 int execute(char**, pid_t);
-char** get_args(char*);
+char** get_av(char*);
 
 #endif /* MAIN */
 
