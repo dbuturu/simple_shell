@@ -1,3 +1,5 @@
+#include "main.h"
+
 int _strtok(int argc, char *argv[])
 {
 	char *str1, *str2, *token, *subtoken;
@@ -27,30 +29,25 @@ int _strtok(int argc, char *argv[])
 }
 
 char **get_av(char *line) {
-  int idx = 0;
+	int idx = 0;
 
-  char delim[] = " \t\r\n";
-  char **tokenList = malloc(MAXTOKENS * sizeof(char *));
-  char *token;
+	char delim[] = " \t\r\n";
+	char **tokenList = malloc(MAXTOKENS * sizeof(char *));
+	char *token;
 
-  if (!tokenList) {
-    perror("simple shell: allocation error\n");
-    exit(EXIT_FAILURE);
-  }
+	if (!tokenList) {
+		perror("simple shell: allocation error\n");
+		exit(EXIT_FAILURE);
+	}
 
-  token = strtok(line, delim);
-  while (token != NULL) {
-    tokenList[idx] = token;
-    idx++;
+	token = _strtok(line, delim);
+	while (token != NULL) {
+		tokenList[idx] = token;
+		idx++;
+		token = _strtok(NULL, delim);
+	}
 
-    if (idx >= MAXTOKENS - 1) {
-      break;
-    }
-
-    token = strtok(NULL, delim);
-  }
-
-  tokenList[idx] = NULL;
-  return tokenList;
+	tokenList[idx] = NULL;
+	return tokenList;
 }
 
