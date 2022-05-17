@@ -8,6 +8,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <signal.h>
+#include <string.h>
 
 #define MAXLEN 512
 #define MAXTOKENS 10
