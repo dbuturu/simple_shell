@@ -13,7 +13,6 @@
 #define MAXLEN 512
 #define MAXTOKENS 10
 
-char* get_line();
 int execute(char**, pid_t);
 char** get_av(char*);
 
