@@ -14,7 +14,7 @@
 #define MAXTOKENS 10
 
 int execute(char**, pid_t);
-char** get_av(char*);
+char **get_av(char *line);
 
 #endif /* MAIN */
 
