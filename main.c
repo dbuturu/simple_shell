@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * main - start function
+ * Return: 1
+ */
 int main(void)
 {
 	ssize_t stat;
@@ -33,9 +37,15 @@ int main(void)
 		status = execute(args, pid);
 		fflush(stdout);
 	}
-	return ((int)stat);
+	return (1);
 }
 
+/**
+ * execute - runs comand
+ * @args: args
+ * @pid: pid
+ * Return: 0 or 1
+ */
 int execute(char **args, pid_t pid)
 {
 	char *envs[] = {NULL};

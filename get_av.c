@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * get_av - get av
+ * @line: stdin line
+ * Return: av
+ */
+
 char **get_av(char *line)
 {
 	int idx = 0;
