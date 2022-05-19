@@ -6,8 +6,7 @@
  */
 int main(void)
 {
-	ssize_t stat;
-	int status;
+	ssize_t stat = 1;
 	char *prompt;
 	size_t len = 0;
 	char *line = NULL;
@@ -34,7 +33,7 @@ int main(void)
 		if (feof(stdin))
 			exit(EXIT_SUCCESS);
 		pid = fork();
-		status = execute(args, pid);
+		execute(args, pid);
 		fflush(stdout);
 	}
 	return (1);
